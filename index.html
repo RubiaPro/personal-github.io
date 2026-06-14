@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="陈星宇 — 全栈开发者 & 创意技术专家。用代码与艺术，构建未来每一个像素。">
+  <title>陈星宇 | 创意开发者</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ========== CUSTOM CURSOR ========== -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-trail" id="cursorTrail"></div>
+
+  <!-- ========== CANVAS PARTICLES ========== -->
+  <canvas id="particleCanvas"></canvas>
+
+  <!-- ========== NAVIGATION ========== -->
+  <nav class="nav" id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo">
+        <span class="logo-bracket">&lt;</span>AC<span class="logo-bracket">/&gt;</span>
+      </a>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="#about" class="nav-link"><span class="nav-num">01</span> 关于</a></li>
+        <li><a href="#skills" class="nav-link"><span class="nav-num">02</span> 技能</a></li>
+        <li><a href="#projects" class="nav-link"><span class="nav-num">03</span> 作品</a></li>
+        <li><a href="#contact" class="nav-link"><span class="nav-num">04</span> 联系</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ========== MAIN CONTENT ========== -->
+  <main>
+
+    <!-- ===== HERO ===== -->
+    <section id="hero" class="hero">
+      <div class="hero-content">
+        <p class="hero-greeting reveal">你好，我是</p>
+        <h1 class="hero-title reveal">
+          <span class="title-line">陈</span>
+          <span class="title-line title-line--accent">星宇</span>
+        </h1>
+        <div class="hero-subtitle reveal">
+          <span class="typed-prefix">我创造</span>
+          <span class="typed-text" id="typedText"></span>
+          <span class="typed-cursor">|</span>
+        </div>
+        <p class="hero-desc reveal">
+          全栈开发者 &amp; 创意技术专家 — 在代码与艺术的交汇处，
+          打造令人沉浸的数字体验。
+        </p>
+        <div class="hero-cta reveal">
+          <a href="#projects" class="btn btn--primary magnetic">
+            <span>查看作品</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+          <a href="#contact" class="btn btn--ghost magnetic">
+            联系我
+          </a>
+        </div>
+      </div>
+      <div class="hero-scroll-indicator">
+        <span>下滑探索</span>
+        <div class="scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- ===== ABOUT ===== -->
+    <section id="about" class="section about">
+      <div class="container">
+        <h2 class="section-title reveal">
+          <span class="section-num">01.</span> 关于我
+        </h2>
+        <div class="about-grid">
+          <div class="about-text reveal">
+            <p>
+              我是一名全栈开发者，热衷于构建
+              <span class="text-highlight">美观、高性能</span> 的 Web 应用。
+              拥有 6 年以上的开发经验，专注于打造融合美学设计与稳健工程的数字产品。
+            </p>
+            <p>
+              目前常驻上海，工作在
+              <span class="text-highlight">创意开发</span> 与
+              <span class="text-highlight">用户体验工程</span> 的交汇地带，
+              通过简洁的代码和深思熟虑的交互设计，将创意变为现实。
+            </p>
+            <p>
+              不写代码的时候，我喜欢探索生成艺术、
+              参与开源项目，或者捣鼓各种创意编程框架。
+            </p>
+          </div>
+          <div class="about-visual reveal">
+            <div class="code-block glass-card">
+              <div class="code-header">
+                <span class="code-dot code-dot--red"></span>
+                <span class="code-dot code-dot--yellow"></span>
+                <span class="code-dot code-dot--green"></span>
+                <span class="code-filename">developer.json</span>
+              </div>
+              <pre><code>{
+  <span class="code-key">"姓名"</span>: <span class="code-string">"陈星宇"</span>,
+  <span class="code-key">"角色"</span>: <span class="code-string">"创意开发者"</span>,
+  <span class="code-key">"技术栈"</span>: [
+    <span class="code-string">"React"</span>,
+    <span class="code-string">"Vue"</span>,
+    <span class="code-string">"Node.js"</span>,
+    <span class="code-string">"Three.js"</span>
+  ],
+  <span class="code-key">"理念"</span>: <span class="code-string">"代码即诗"</span>
+}</code></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SKILLS ===== -->
+    <section id="skills" class="section skills">
+      <div class="container">
+        <h2 class="section-title reveal">
+          <span class="section-num">02.</span> 技能与专长
+        </h2>
+        <div class="skills-grid reveal">
+          <!-- Frontend -->
+          <div class="skill-category glass-card">
+            <h3 class="skill-cat-title">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--neon-cyan)" stroke-width="2">
+                <rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/>
+              </svg>
+              前端开发
+            </h3>
+            <div class="skill-tags">
+              <span class="skill-tag">React</span><span class="skill-tag">Vue.js</span>
+              <span class="skill-tag">TypeScript</span><span class="skill-tag">Next.js</span>
+              <span class="skill-tag">Tailwind CSS</span><span class="skill-tag">GSAP</span>
+              <span class="skill-tag">Three.js</span><span class="skill-tag">WebGL</span>
+            </div>
+          </div>
+          <!-- Backend -->
+          <div class="skill-category glass-card">
+            <h3 class="skill-cat-title">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--neon-purple)" stroke-width="2">
+                <ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/>
+              </svg>
+              后端开发
+            </h3>
+            <div class="skill-tags">
+              <span class="skill-tag">Node.js</span><span class="skill-tag">Python</span>
+              <span class="skill-tag">Go</span><span class="skill-tag">PostgreSQL</span>
+              <span class="skill-tag">MongoDB</span><span class="skill-tag">Redis</span>
+              <span class="skill-tag">GraphQL</span><span class="skill-tag">Docker</span>
+            </div>
+          </div>
+          <!-- Tools -->
+          <div class="skill-category glass-card">
+            <h3 class="skill-cat-title">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--neon-pink)" stroke-width="2">
+                <circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/>
+              </svg>
+              工具与其他
+            </h3>
+            <div class="skill-tags">
+              <span class="skill-tag">Figma</span><span class="skill-tag">Git</span>
+              <span class="skill-tag">AWS</span><span class="skill-tag">CI/CD</span>
+              <span class="skill-tag">Linux</span><span class="skill-tag">Webpack</span>
+              <span class="skill-tag">Vite</span><span class="skill-tag">Testing</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PROJECTS ===== -->
+    <section id="projects" class="section projects">
+      <div class="container">
+        <h2 class="section-title reveal">
+          <span class="section-num">03.</span> 精选作品
+        </h2>
+        <div class="projects-grid">
+          <!-- Project 1 -->
+          <article class="project-card glass-card reveal">
+            <div class="project-image">
+              <div class="project-img-placeholder">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" opacity="0.4">
+                  <rect x="2" y="2" width="20" height="20" rx="2.5"/><path d="M16 8l-8 8M8 8l8 8"/>
+                </svg>
+              </div>
+              <div class="project-overlay">
+                <a href="#" class="project-link">查看项目 <span>&nearr;</span></a>
+              </div>
+            </div>
+            <div class="project-info">
+              <h3 class="project-title">星云数据面板</h3>
+              <p class="project-desc">实时数据分析平台，融合沉浸式数据可视化与 AI 智能洞察。</p>
+              <div class="project-tech">
+                <span>React</span><span>D3.js</span><span>WebSocket</span><span>Node.js</span>
+              </div>
+            </div>
+          </article>
+          <!-- Project 2 -->
+          <article class="project-card glass-card reveal">
+            <div class="project-image">
+              <div class="project-img-placeholder">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" opacity="0.4">
+                  <circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>
+                </svg>
+              </div>
+              <div class="project-overlay">
+                <a href="#" class="project-link">查看项目 <span>&nearr;</span></a>
+              </div>
+            </div>
+            <div class="project-info">
+              <h3 class="project-title">赛博音乐工坊</h3>
+              <p class="project-desc">基于浏览器的音乐创作工具，结合 Web Audio API 与生成式视觉特效。</p>
+              <div class="project-tech">
+                <span>Web Audio</span><span>Canvas</span><span>GSAP</span><span>Vue.js</span>
+              </div>
+            </div>
+          </article>
+          <!-- Project 3 -->
+          <article class="project-card glass-card reveal">
+            <div class="project-image">
+              <div class="project-img-placeholder">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" opacity="0.4">
+                  <path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/>
+                </svg>
+              </div>
+              <div class="project-overlay">
+                <a href="#" class="project-link">查看项目 <span>&nearr;</span></a>
+              </div>
+            </div>
+            <div class="project-info">
+              <h3 class="project-title">密文保险柜</h3>
+              <p class="project-desc">端到端加密文件共享平台，采用零知识架构与极致简约的界面设计。</p>
+              <div class="project-tech">
+                <span>Go</span><span>React</span><span>WebRTC</span><span>PostgreSQL</span>
+              </div>
+            </div>
+          </article>
+          <!-- Project 4 -->
+          <article class="project-card glass-card reveal">
+            <div class="project-image">
+              <div class="project-img-placeholder">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" opacity="0.4">
+                  <polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2"/><line x1="12" y1="22" x2="12" y2="15.5"/><polyline points="22 8.5 12 15.5 2 8.5"/>
+                </svg>
+              </div>
+              <div class="project-overlay">
+                <a href="#" class="project-link">查看项目 <span>&nearr;</span></a>
+              </div>
+            </div>
+            <div class="project-info">
+              <h3 class="project-title">棱镜设计系统</h3>
+              <p class="project-desc">全面的 UI 组件库，以无障碍优先为理念，内置强大的主题引擎。</p>
+              <div class="project-tech">
+                <span>TypeScript</span><span>Storybook</span><span>CSS-in-JS</span><span>Jest</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section id="contact" class="section contact">
+      <div class="container">
+        <h2 class="section-title reveal">
+          <span class="section-num">04.</span> 联系我
+        </h2>
+        <div class="contact-grid reveal">
+          <div class="contact-form-wrapper glass-card">
+            <form class="contact-form" id="contactForm">
+              <div class="form-group">
+                <label for="name">你的名字</label>
+                <input type="text" id="name" name="name" placeholder="请输入你的名字" required>
+              </div>
+              <div class="form-group">
+                <label for="email">邮箱地址</label>
+                <input type="email" id="email" name="email" placeholder="example@mail.com" required>
+              </div>
+              <div class="form-group">
+                <label for="message">留言内容</label>
+                <textarea id="message" name="message" rows="5" placeholder="说说你的项目想法..." required></textarea>
+              </div>
+              <button type="submit" class="btn btn--primary magnetic">
+                发送消息
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
+                </svg>
+              </button>
+            </form>
+          </div>
+          <div class="contact-info">
+            <div class="contact-card glass-card">
+              <div class="contact-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--neon-cyan)" stroke-width="2">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                  <polyline points="22,6 12,13 2,6"/>
+                </svg>
+              </div>
+              <p>hello@chenxingyu.cn</p>
+            </div>
+            <div class="contact-card glass-card">
+              <div class="contact-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--neon-purple)" stroke-width="2">
+                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/>
+                </svg>
+              </div>
+              <p>github.com/chenxingyu</p>
+            </div>
+            <div class="contact-card glass-card">
+              <div class="contact-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--neon-pink)" stroke-width="2">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zM17.5 6.5h.01"/>
+                </svg>
+              </div>
+              <p>@chenxingyu_dev</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <p class="footer-text">由 陈星宇 <span class="footer-heart">&hearts;</span> 精心设计与开发</p>
+        <p class="footer-copy">&copy; 2026 保留所有权利</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" id="backToTop" aria-label="回到顶部">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M18 15l-6-6-6 6"/>
+    </svg>
+  </button>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+</body>
+</html>
